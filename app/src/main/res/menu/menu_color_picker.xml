@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_color_picker_time"
+        android:icon="@drawable/ic_watch_later"
+        android:orderInCategory="100"
+        android:title="Time"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_color_picker_action_flash"
+        android:icon="@drawable/ic_action_flash_on"
+        android:orderInCategory="100"
+        android:title="@string/menu_color_picker_action_flash"
+        app:showAsAction="ifRoom" />
+
+</menu>

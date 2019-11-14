@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Splash-->
+    <string name="app_name">Qundal</string>
+    <string name="logo_text">challenge status quo</string>
+
+    <!--Home-->
+    <string name="whats_new">WHAT\'S NEW</string>
+    <string name="run">RUN</string>
+    <string name="history">HISTORY</string>
+    <string name="tutorial">TUTORIAL</string>
+    <string name="product">Select your product</string>
+
+    <!--History-->
+    <string name="delete">Do you want to delete?</string>
+
+    <!--Alert-->
+    <string name="name_alert_empty">Name cannot be empty</string>
+    <string name="name_alert_exists">Name already exists</string>
+    <string name="name_alert_title">Enter patient\'s name</string>
+    <string name="time_alert_empty">Time cannot be empty</string>
+    <string name="time_alert_limit">Runtime must be between 1-10</string>
+    <string name="time_alert_title">Enter runtime (minutes)</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+
+    <!--Alert-->
+    <string name="select_language">Select Language</string>
+    <string name="general">General</string>
+    <string name="application_language">Application Language</string>
+    <string name="feedback">Feedback</string>
+    <string name="bugs">Bugs and Issues</string>
+    <string name="report_issues">Report issues faced in application</string>
+    <string name="ratings">Ratings</string>
+    <string name="rate_on_playstore">Rate the application on PlayStore</string>
+    <string name="about">About</string>
+    <string name="about_manufacture">Manufacture of medical instruments</string>
+
+    <string name="instaNGAL">Kidney disorder detection</string>
+    <string name="instaCRP">Internal inflammation detection</string>
+    <string name="instaPSA">Prostate cancer detection</string>
+
+
+    <!--Extras-->
+    <string name="activity_color_picker_label">Qundal</string>
+    <string name="activity_color_picker_confirm_save_message">Task Complete</string>
+    <string name="menu_color_picker_action_flash">Flash</string>
+
+    <string-array name="modes">
+        <item>Automatic</item>
+        <item>Manual</item>
+    </string-array>
+
+    <!--AppBar-->
+    <string name="qundal">Qundal</string>
+    <string name="instangal">InstaNGAL</string>
+    <string name="instacrp">InstaCRP</string>
+    <string name="instapsa">InstaPSA</string>
+    <string name="previous">Previous Tests</string>
+    <string name="matching">Matching Images</string>
+    <string name="graph">Graph Details</string>
+    <string name="settings">Settings</string>
+
+
+    <!--instaNGAL-->
+    <string name="calibrating">Calibrating ...</string>
+    <string name="running">Running ...</string>
+    <string name="calibrated">Calibrated. Ready for test run!</string>
+    <string name="complete">Run Complete!</string>
+
+</resources>

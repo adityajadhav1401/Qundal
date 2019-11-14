@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="70dp"
+        android:background="#ddd">
+        <com.ortiz.touchview.TouchImageView
+            android:id="@+id/image_switcher"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY">
+        </com.ortiz.touchview.TouchImageView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/tom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold"
+            android:textColor="#333"
+            android:text="TOM | E (sec) :"
+            android:padding="16dp"/>
+
+        <TextView
+            android:id="@+id/image_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold"
+            android:textColor="#333"
+            android:text=""
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp"
+            android:paddingTop="16dp"/>
+
+    </LinearLayout>
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/next_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:hapticFeedbackEnabled="true"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/color_primary"
+        android:background="@drawable/oval_white"
+        android:drawableLeft="@drawable/ic_play_arrow"
+        android:paddingLeft="8dp"
+        android:drawableTint="@android:color/white"
+        android:elevation="10dp"
+        android:layout_marginBottom="8dp"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/previous_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:hapticFeedbackEnabled="true"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/color_primary"
+        android:background="@drawable/oval_white"
+        android:drawableLeft="@drawable/ic_play_arrow"
+        android:paddingLeft="8dp"
+        android:rotation="180"
+        android:drawableTint="@android:color/white"
+        android:elevation="10dp"
+        android:layout_marginBottom="8dp"/>
+
+    <com.jjoe64.graphview.GraphView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/graph_view"
+        android:visibility="invisible"/>
+
+</RelativeLayout>

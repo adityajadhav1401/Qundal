@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:weightSum="10">
+
+    <LinearLayout
+        android:layout_weight="1.5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_primary_dark"
+            android:textSize="21sp"
+            android:text="Default item"
+            android:textStyle="bold" />
+        <TextView android:id="@+id/text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Default sub item"
+            android:textColor="#555" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="8.5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:layout_gravity="center">
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/delete_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/color_accent_temp"
+            android:background="@drawable/oval_white"
+            android:drawableLeft="@drawable/ic_delete"
+            android:paddingLeft="8dp"/>
+    </LinearLayout>
+
+</LinearLayout>

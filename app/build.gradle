@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "28.0.3"
+
+    defaultConfig {
+        applicationId "fr.tvbarthel.apps.cameracolorpicker"
+        minSdkVersion 21
+        targetSdkVersion 26
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "store", "user"
+
+    productFlavors {
+        googleplay {
+            versionCode 8
+            versionName "gp-0.0.8"
+            dimension "store"
+        }
+
+        foss {
+            versionCode 8
+            versionName "foss-0.0.8"
+            applicationIdSuffix ".foss"
+            dimension "store"
+        }
+
+        // as opposed to kids
+        adult {
+            dimension "user"
+        }
+
+        // attempt to adapt app for children.
+        kids {
+            dimension "user"
+            applicationIdSuffix ".kids"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.melnykov:floatingactionbutton:1.1.0'
+    implementation 'com.google.code.gson:gson:2.4'
+    implementation 'com.jpardogo.materialtabstrip:library:1.0.9'
+    implementation ("android.arch.persistence.room:runtime:1.1.1") {
+        exclude group: 'com.android.support'
+    }
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+    implementation ("android.arch.lifecycle:extensions:1.1.1") {
+        exclude group: 'com.android.support'
+    }
+    implementation ('com.jjoe64:graphview:4.2.2')
+    implementation ('com.github.MikeOrtiz:TouchImageView:1.4.0') {
+        exclude group: 'com.android.support'
+    }
+
+}

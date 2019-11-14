@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Splash-->
+    <string name="app_name">Qundal</string>
+    <string name="logo_text">challenge status quo</string>
+
+    <!--Home-->
+    <string name="whats_new">नया क्या है</string>
+    <string name="run">शुरू</string>
+    <string name="history">पिछले</string>
+    <string name="tutorial">चालना सीखे</string>
+    <string name="product">अपने उत्पाद का चयन करें</string>
+
+    <!--History-->
+    <string name="delete">क्या आप इसे हटाना चाहते हैं?</string>
+
+    <!--Alert-->
+    <string name="name_alert_empty">नाम खाली नहीं हो सकता</string>
+    <string name="name_alert_exists">नाम पहले से मौजूद है</string>
+    <string name="name_alert_title">रोगी का नाम दर्ज करें</string>
+    <string name="time_alert_empty">समय खाली नहीं हो सकता</string>
+    <string name="time_alert_limit">समय 1-10 के बीच होना चाहिए</string>
+    <string name="time_alert_title">समय दर्ज करें (मिनट)</string>
+    <string name="ok">ठीक</string>
+    <string name="cancel">रद्द</string>
+
+    <!--Alert-->
+    <string name="select_language">भाषा का चयन करें</string>
+    <string name="general">सामान्य</string>
+    <string name="application_language">अनुप्रयोग भाषा</string>
+    <string name="feedback">प्रतिपुष्टि</string>
+    <string name="bugs">गलतियाँ और मुद्दे</string>
+    <string name="report_issues">सामने आए मुद्दों के बारे में बताएं</string>
+    <string name="ratings">रेटिंग</string>
+    <string name="rate_on_playstore">PlayStore पर एप्लिकेशन को रेट करें</string>
+    <string name="about">जानकारी</string>
+    <string name="about_manufacture">ऑप्टिकल उपकरणों का निर्माण</string>
+
+    <string name="instaNGAL">गुर्दा विकार का पता लगाना</string>
+    <string name="instaCRP">आंतरिक बदनामी का पता लगाने</string>
+    <string name="instaPSA">प्रोस्टेट कैंसर का पता लगाना</string>
+
+    <!--Extras-->
+    <string name="activity_color_picker_label">Qundal</string>
+    <string name="activity_color_picker_confirm_save_message">Task Complete</string>
+    <string name="menu_color_picker_action_flash">Flash</string>
+
+    <string-array name="modes">
+        <item>Automatic</item>
+        <item>Manual</item>
+    </string-array>
+
+    <!--AppBar-->
+    <string name="qundal">Qundal</string>
+    <string name="instangal">InstaNGAL</string>
+    <string name="instacrp">InstaCRP</string>
+    <string name="instapsa">InstaPSA</string>
+    <string name="previous">पिछले टेस्ट</string>
+    <string name="matching">मिलान छवियाँ</string>
+    <string name="graph">ग्राफ़</string>
+    <string name="settings">समायोजन</string>
+
+
+    <!--instaNGAL-->
+    <string name="calibrating">कैलिब्रेट करें ...</string>
+    <string name="running">चल रहा है ...</string>
+    <string name="calibrated">कैलिब्रेटेड  टेस्ट रन के लिए तैयार!</string>
+    <string name="complete">पूरा कर लिया है!</string>
+</resources>
