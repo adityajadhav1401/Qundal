@@ -45,7 +45,7 @@ public class OptionsActivity extends AppCompatActivity {
     static protected ArrayList<Integer> imageIds;
     static protected ArrayList<BitmapDrawable> images;
     static protected Integer numImages;
-    protected static int CAPTURE_INTERVAL = 15;
+    protected static int CAPTURE_INTERVAL = 5;
 
     static protected double minDist;
     static protected int minDistIndex;
@@ -111,13 +111,15 @@ public class OptionsActivity extends AppCompatActivity {
                     double sum = 0;
                     minTime = 0;
                     for (int i=minDistIndex; i<data.size() && Math.abs(minDist-data.get(i).distance)*100/Math.max(minDist,1) < THRESHOLD; i++) {
-                        sum += THRESHOLD-Math.abs(minDist-data.get(i).distance)*100/Math.max(minDist,1);
-                        minTime += data.get(i).fid * (THRESHOLD-Math.abs(minDist-data.get(i).distance)*100/Math.max(minDist,1));
+                        double weight = (THRESHOLD-Math.abs(minDist-data.get(i).distance)*100/Math.max(minDist,1)) / ((i-minDistIndex+1)*100/Math.max((double) minDistIndex,1.0));
+                        sum += weight;
+                        minTime += data.get(i).fid * weight;
                     }
 
                     for (int i=minDistIndex; i>=0 && Math.abs(minDist-data.get(i).distance)*100/Math.max(minDist,1) < THRESHOLD; i--) {
-                        sum += THRESHOLD-Math.abs(minDist-data.get(i).distance)*100/Math.max(minDist,1);
-                        minTime += data.get(i).fid * (THRESHOLD-Math.abs(minDist-data.get(i).distance)*100/Math.max(minDist,1));
+                        double weight = (THRESHOLD-Math.abs(minDist-data.get(i).distance)*100/Math.max(minDist,1)) / ((minDistIndex+1-i)*100/Math.max((double) minDistIndex,1.0));
+                        sum += weight;
+                        minTime += data.get(i).fid * weight;
                     }
 
                     minTime /= Math.max(sum,1);
@@ -171,7 +173,7 @@ public class OptionsActivity extends AppCompatActivity {
                         }
                         try {
                             imageSwitcher.setImageDrawable(images.get(currentImageIndex));
-                            imageTextView.setText(String.valueOf(currentImageIndex+1) + " : " + String.valueOf(imageIds.get(currentImageIndex)));
+                            imageTextView.setText(String.valueOf(imageIds.get(currentImageIndex)));
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -180,7 +182,7 @@ public class OptionsActivity extends AppCompatActivity {
                             public void onClick(View v) {
                                 currentImageIndex = Math.max(0, --currentImageIndex);
                                 imageSwitcher.setImageDrawable(images.get(currentImageIndex));
-                                imageTextView.setText(String.valueOf(currentImageIndex+1) + " : " + String.valueOf(imageIds.get(currentImageIndex)));
+                                imageTextView.setText(String.valueOf(imageIds.get(currentImageIndex)));
                             }
                         });
 
@@ -189,7 +191,7 @@ public class OptionsActivity extends AppCompatActivity {
                             public void onClick(View v) {
                                 currentImageIndex = Math.min(numImages - 1, ++currentImageIndex);
                                 imageSwitcher.setImageDrawable(images.get(currentImageIndex));
-                                imageTextView.setText(String.valueOf(currentImageIndex+1) + " : " + String.valueOf(imageIds.get(currentImageIndex)));
+                                imageTextView.setText(String.valueOf(imageIds.get(currentImageIndex)));
                             }
                         });
 

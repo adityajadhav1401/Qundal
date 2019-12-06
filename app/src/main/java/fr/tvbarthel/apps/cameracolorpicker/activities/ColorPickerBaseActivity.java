@@ -410,12 +410,26 @@ public class ColorPickerBaseActivity extends AppCompatActivity
         outColor[3] = getWeightedMean(outColorArray[3]); outColor[4] = getWeightedMean(outColorArray[4]); outColor[5] = getWeightedMean(outColorArray[5]);
         inColor[0] = getWeightedMean(inColorArray[0]); inColor[1] = getWeightedMean(inColorArray[1]); inColor[2] = getWeightedMean(inColorArray[2]);
 
-        distance = Math.sqrt(Math.pow(inColor[0]-(outColor[0]+outColor[3])/2,2)
-                + Math.pow(inColor[1]-(outColor[1]+outColor[4])/2,2)
-                + Math.pow(inColor[2]-(outColor[2]+outColor[5])/2,2));
+        float[] e1 = {inColor[0], inColor[1], inColor[2]};
+        Color.RGBToHSV(inColor[0],inColor[1],inColor[2],e1);
+        float[] e2 = {(outColor[0]+outColor[3])/2, (outColor[1]+outColor[4])/2, (outColor[2]+outColor[5])/2};
+        Color.RGBToHSV((int)e2[0],(int)e2[1],(int)e2[2],e2);
+
+        distance = Eucledian(e1, e2);
         distanceText.setText("Distance = " + String.format("%.2f", distance));
     }
 
+    public double Eucledian(float[] e1, float[] e2) {
+        return Math.sqrt(Math.pow(e1[1]-e2[1],2)*10000+Math.pow(e1[2]-e2[2],2)*10000);
+    }
+
+    public double ColourDistance(float[] e1, float[] e2) {
+        long rmean = ( (long)e1[0] + (long)e2[0] ) / 2;
+        long r = (long)e1[0] - (long)e2[0];
+        long g = (long)e1[1] - (long)e2[1];
+        long b = (long)e1[2] - (long)e2[2];
+        return Math.sqrt((((512+rmean)*r*r)>>8) + 4*g*g + (((767-rmean)*b*b)>>8));
+    }
 
     @Override
     public void onClick(View v) {
@@ -574,7 +588,7 @@ public class ColorPickerBaseActivity extends AppCompatActivity
             }
         });
 
-        nameAlert();
+        airplaneAlert();
     }
 
     protected boolean isFlashSupported() {
@@ -690,7 +704,7 @@ public class ColorPickerBaseActivity extends AppCompatActivity
                     nameErrorMessage.setVisibility(View.VISIBLE);
                 }
                 else {
-                    if (Integer.valueOf(nameText.getText().toString()) > 10) {
+                    if (Integer.valueOf(nameText.getText().toString()) > 15) {
                         nameErrorMessage.setText(getResources().getString(R.string.time_alert_limit));
                         nameErrorMessage.setVisibility(View.VISIBLE);
                     }
@@ -723,6 +737,11 @@ public class ColorPickerBaseActivity extends AppCompatActivity
         runComplete = false;
         modeSpinner.setEnabled(false);
         modeSpinner.setClickable(false);
+        if (isFlashSupported() && !mIsFlashOn) {
+            int flashIcon = mIsFlashOn ? R.drawable.ic_action_flash_off : R.drawable.ic_action_flash_on;
+            toggleFlash();
+            menu.getItem(1).setIcon(flashIcon);
+        }
     }
 
     public void stopButtonClick() {
@@ -745,6 +764,11 @@ public class ColorPickerBaseActivity extends AppCompatActivity
         b.putString("folderName",folderName);
         b.putBoolean("toSave",true);
         intent.putExtras(b);
+        if (isFlashSupported() && mIsFlashOn) {
+            int flashIcon = mIsFlashOn ? R.drawable.ic_action_flash_off : R.drawable.ic_action_flash_on;
+            toggleFlash();
+            menu.getItem(1).setIcon(flashIcon);
+        }
         startActivity(intent);
         finish();
     }
@@ -801,6 +825,34 @@ public class ColorPickerBaseActivity extends AppCompatActivity
                         dialog.dismiss();
                     }
                 }
+            }
+        });
+    }
+
+    public void airplaneAlert() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(getResources().getString(R.string.airplane_alert_title));
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogLayout = inflater.inflate(R.layout.airplane_alert,null);
+        builder.setPositiveButton(getResources().getString(R.string.ok),
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) { }
+                });
+        builder.setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+                dialog.dismiss();
+            }
+        });
+        builder.setView(dialogLayout);
+        builder.setCancelable(false);
+        final AlertDialog dialog = builder.create();
+        dialog.show();
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nameAlert();
+                dialog.dismiss();
             }
         });
     }

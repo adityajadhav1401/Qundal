@@ -15,11 +15,13 @@
     <string name="delete">Do you want to delete?</string>
 
     <!--Alert-->
+    <string name="airplane_alert_title">Turn on airplane mode</string>
+    <string name="airplane_alert_text">We recommend using the application in airplane mode for uninterrupted use.</string>
     <string name="name_alert_empty">Name cannot be empty</string>
     <string name="name_alert_exists">Name already exists</string>
     <string name="name_alert_title">Enter patient\'s name</string>
     <string name="time_alert_empty">Time cannot be empty</string>
-    <string name="time_alert_limit">Runtime must be between 1-10</string>
+    <string name="time_alert_limit">Runtime must be between 1-15</string>
     <string name="time_alert_title">Enter runtime (minutes)</string>
     <string name="ok">Ok</string>
     <string name="cancel">Cancel</string>
@@ -57,7 +59,7 @@
     <string name="instacrp">InstaCRP</string>
     <string name="instapsa">InstaPSA</string>
     <string name="previous">Previous Tests</string>
-    <string name="matching">Matching Images</string>
+    <string name="matching">Best Intensity Matching Images</string>
     <string name="graph">Graph Details</string>
     <string name="settings">Settings</string>
 

@@ -15,11 +15,13 @@
     <string name="delete">क्या आप इसे हटाना चाहते हैं?</string>
 
     <!--Alert-->
+    <string name="airplane_alert_title">हवाई जहाज मोड चालू करें</string>
+    <string name="airplane_alert_text">हम निर्बाध उपयोग के लिए हवाई जहाज मोड पर स्विच करने की सलाह देते हैं।</string>
     <string name="name_alert_empty">नाम खाली नहीं हो सकता</string>
     <string name="name_alert_exists">नाम पहले से मौजूद है</string>
     <string name="name_alert_title">रोगी का नाम दर्ज करें</string>
     <string name="time_alert_empty">समय खाली नहीं हो सकता</string>
-    <string name="time_alert_limit">समय 1-10 के बीच होना चाहिए</string>
+    <string name="time_alert_limit">समय 1-15 के बीच होना चाहिए</string>
     <string name="time_alert_title">समय दर्ज करें (मिनट)</string>
     <string name="ok">ठीक</string>
     <string name="cancel">रद्द</string>
@@ -56,7 +58,7 @@
     <string name="instacrp">InstaCRP</string>
     <string name="instapsa">InstaPSA</string>
     <string name="previous">पिछले टेस्ट</string>
-    <string name="matching">मिलान छवियाँ</string>
+    <string name="matching">सर्वश्रेष्ठ तीव्रता मिलान छवियाँ</string>
     <string name="graph">ग्राफ़</string>
     <string name="settings">समायोजन</string>
 
